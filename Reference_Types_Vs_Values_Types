@@ -1,0 +1,82 @@
+import java.util.Arrays;
+
+public class Reference_Types_Vs_Value_Types
+{
+    public static void main(String[] args){
+
+        int myIntValue = 10;
+        int anotherIntValue = myIntValue;
+
+        System.out.println("myIntValue = " +myIntValue);
+        System.out.println("anotherIntValue = " +anotherIntValue);
+
+        anotherIntValue++;
+        System.out.println("myIntValue = " +myIntValue);
+        System.out.println("anotherIntValue = " +anotherIntValue);
+
+// So when we created an int variable(value type) then a single space in memory is allocated to store the value 
+// and that variable directly holds the value. Now if you assign it to another variable, the value is copied directly and then both variable work independently,as you can see.
+// Now reference types,like arrays or classes, work differently.
+
+int myIntArray[] = new int[5];
+// So above array has got 5 elements and we have a variable or in other words a reference myintarray.
+// Now arrays again are reference types. So what does this mean again.
+// Well, reference types are used by a reference.
+// So a reference holds a reference or an address to the object but not the object itself.
+// With reference types, we've using a reference to control the object in memory.
+// So we can't access the onject directly. So, a reference is like an address of some object in memory.
+
+int anotherArray[] = myIntArray;
+// In the above line we are declaring another reference to the same array in memory.
+// So now we've got 2 references pointing to the same array in memory.
+// So ,in other words, both myintarray and another array holds the same address.
+
+System.out.println("myIntArray = "+Arrays.toString(myIntArray));
+// So, in this case we've got an array of integers. So the string method is going to convert every element
+// in the array to a string and then return a new string where every element is separated nicely and we can 
+// print the whole array on 1 line 
+
+System.out.println("anotherArray = "+Arrays.toString(anotherArray));
+
+System.out.println("\n");
+
+anotherArray[0] = 1;
+//  Changes will be reflected in both the arrays.
+System.out.println("After change myIntArray = "+Arrays.toString(myIntArray));
+System.out.println("After change anotherArray = "+Arrays.toString(anotherArray));
+
+
+
+modifyArray(myIntArray);
+// We passing the reference of myIntArray int the method called modifyArray.
+// The reference is copied to the parameter.
+// So in other words, now we've got 3 references to the same array.
+// The parameter  is the third referenece to the array.
+
+System.out.println("\n");
+
+//  Again Changes will be reflected in both the arrays.
+System.out.println("After modify myIntArray = "+Arrays.toString(myIntArray));
+System.out.println("After modify anotherArray = "+Arrays.toString(anotherArray));
+
+// anotherArray = new int[]{456,789,123,4533,665}; // A new array is created 
+// System.out.println("Now myIntArray = "+Arrays.toString(myIntArray));
+// System.out.println("Now  modify anotherArray = "+Arrays.toString(anotherArray));
+
+
+
+    }
+
+    private static void modifyArray(int array[]){
+
+
+        array[0] = 2;
+
+        // de-referencing the referenece 
+
+        // array = new int[] {1,2,3,4,5};
+
+        // In this case, we're creating a new array.
+        // so we have to use the new int[] and then initialize the array.
+    }
+}
