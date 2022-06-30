@@ -1,0 +1,62 @@
+// So, it is a data structure that allows us to store the sequence of characters that are all of the same type.
+
+import java.util.Scanner;
+
+public class arrays{
+
+    public static void main(String[] args) {
+
+        System.out.println("\n****************************************************************************************\n");
+
+        Scanner sc  =  new Scanner(System.in);
+        
+        // int[] myIntVariable = new int[10]; // array initialization and booking 10 elements slots for the array
+        
+        // for(int i = 0 ; i < 10 ;i++){
+
+        //     System.out.println("Enter the number on the index - " + i + " :");
+        //     myIntVariable[i] = sc.nextInt();
+        // }
+
+        // System.out.println("--------- Printing the array ---------");
+
+        // for(int i = 0 ; i < 10 ;i++){
+
+        //     System.out.println("Element at the index - " + i + " is : " + myIntVariable[i]);
+        // }
+
+
+        // String array
+
+        System.out.println("\n################## String array ################## \n");
+
+        System.out.println("Enter the size of the string array :");
+        int size = sc.nextInt();
+
+        sc.nextLine();
+
+        String myStringVariable[] = new String[size];
+
+        for(int i = 0 ; i < myStringVariable.length ;i++){
+
+            System.out.println("Enter the string on the index - " + i + " :");
+            myStringVariable[i]= sc.nextLine();
+        }
+
+        System.out.println("--------- Printing the String array ---------");
+
+        for(int i = 0 ; i < myStringVariable.length ;i++){
+
+            System.out.println("String at the index - " + i + " is : " + myStringVariable[i]);
+        }
+
+
+
+        sc.close();
+
+    
+        System.out.println("\n***************************************************************************************\n");
+
+         
+    }
+}
